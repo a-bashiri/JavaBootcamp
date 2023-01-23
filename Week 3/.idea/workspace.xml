@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280bba9d-9b34-4fed-9888-a27a922c067b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Day 1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 1/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 1/Day 1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 1/src/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="280bba9d-9b34-4fed-9888-a27a922c067b" name="Changes" comment="Week3-day2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/abdul/Desktop/JavaBootcamp/Week 3",
+    "last_opened_file_path": "C:/Users/abdul/Desktop/JavaBootcampClass",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +90,23 @@
       <option name="presentableId" value="Default" />
       <updated>1674392602853</updated>
       <workItem from="1674392603947" duration="2851000" />
-      <workItem from="1674491758713" duration="734000" />
+      <workItem from="1674491758713" duration="1101000" />
     </task>
+    <task id="LOCAL-00001" summary="Week3-day2">
+      <created>1674492586136</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674492586136</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Week3-day2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Week3-day2" />
   </component>
 </project>
