@@ -7,26 +7,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class WelcomeController {
 
     @GetMapping("/name")
-    public String getName(){
+    public String getName() {
         return "My name is Abdulaziz Bashiri";
     }
 
     @GetMapping("/age")
-    public String getAge(){
+    public String getAge() {
         return "My age is 22";
     }
 
     @GetMapping("/check/status")
-    public String getStatus(){
+    public String getStatus() {
         return "Everything OK";
     }
 
 
     @GetMapping("/health")
-    public String getHealth(){
+    public String getHealth() {
         return "Server health is up and running";
     }
-
 
 
 }
