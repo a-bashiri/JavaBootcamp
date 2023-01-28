@@ -56,10 +56,10 @@ public class UserService {
                 int newStock = merchantStockService.merchantStocks.get(i).getStock() + stock;
                 merchantStockService.merchantStocks.get(i).setStock(newStock);
 
-                return new ApiResponse(200, "Stock was added.");
+                return new ApiResponse(200, "Stock was added");
             }
         }
-        return new ApiResponse(400, "product ID or merchant Id was not found");
+        return new ApiResponse(400, "product ID or merchant ID was not found");
     }
 
 
