@@ -44,7 +44,7 @@ public class User {
 
 
     @NotNull(message = "age is required")
-//    @Positive(message = "age must be positive")
+    @Positive(message = "age must be positive")
     @Column(columnDefinition = "int not null check ( age > 0 ) ")
     private Integer age;
 
