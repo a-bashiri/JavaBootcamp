@@ -8,44 +8,64 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/all")
+    @GetMapping("/get")
     public ResponseEntity getUsers(){
         return ResponseEntity.status(200).body(userService.getUsers());
     }
 
     @PostMapping("/add")
-    public ResponseEntity addUser(@Valid @RequestBody User user, Errors errors){
-        if(errors.hasErrors()){
-            String message = errors.getFieldError().getDefaultMessage();
-            return ResponseEntity.status(400).body(message);
-        }
+    public ResponseEntity addUser(@Valid @RequestBody User user){
+
         userService.addUser(user);
         return ResponseEntity.status(200).body("User Added");
     }
 
     @PutMapping("/update/{id}")
     public ResponseEntity updateUser(@PathVariable Integer id, @Valid @RequestBody User user, Errors errors){
-        if(errors.hasErrors()){
-            String message = errors.getFieldError().getDefaultMessage();
-            return ResponseEntity.status(400).body(message);
-        } else if (userService.updateUser(id,user)) {
-            return ResponseEntity.status(200).body("User Updated");
-        } else
-            return ResponseEntity.status(400).body("ID was not found");
+        userService.updateUser(id,user);
+        return ResponseEntity.status(200).body("User Updated");
+
     }
 
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteUser(@PathVariable Integer id){
-        if (userService.deleteUser(id)){
-            return ResponseEntity.status(200).body("User was deleted");
-        }
-        return ResponseEntity.status(400).body("ID was not found");
+        userService.deleteUser(id);
+        return ResponseEntity.status(200).body("User was deleted");
     }
+
+    @GetMapping("/check")
+    public ResponseEntity checkUsernameAndPassword(@RequestBody User user){
+        userService.checkUsernameAndPassword(user.getUsername(),user.getPassword());
+        return ResponseEntity.status(200).body("Username and Password are correct");
+    }
+
+    @GetMapping("get/email/{email}")
+    public ResponseEntity getUserByEmail(@PathVariable String email){
+        User user = userService.findUserByEmail(email);
+        return ResponseEntity.status(200).body(user);
+    }
+
+    @GetMapping("/get/role/{role}")
+    public ResponseEntity getUsersByRole(@PathVariable String role){
+        List<User> users = userService.getUserByRole(role);
+        return ResponseEntity.status(200).body(users);
+    }
+
+    @GetMapping("/get/age/{age}")
+    public ResponseEntity getUsersAgeOrAbove(@PathVariable int age){
+        List<User> users = userService.findUsersByAgeGreaterThanEqual(age);
+        return ResponseEntity.status(200).body(users);
+    }
+
+
+
 }
