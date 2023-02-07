@@ -30,7 +30,7 @@ public class CourseService {
         if(oldCourse == null)
             throw new ApiException("ID not found");
 
-        course.setId(id);
+        course.setName(course.getName());
         courseRepository.save(course);
     }
 
