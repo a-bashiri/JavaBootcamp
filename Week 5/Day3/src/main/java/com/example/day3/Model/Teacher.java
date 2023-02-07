@@ -1,4 +1,4 @@
-package com.example.day1.Model;
+package com.example.day3.Model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -7,6 +7,8 @@ import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -38,4 +40,7 @@ public class Teacher {
     @OneToOne( cascade = CascadeType.REMOVE ,mappedBy = "teacher")
     @PrimaryKeyJoinColumn
     private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "teacher")
+    private List<Course> courses;
 }
