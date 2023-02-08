@@ -13,20 +13,18 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course {
-
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @NotNull(message = "name is required")
     private String name;
+    @NotNull(message = "age is required")
+    private int age;
+    @NotNull(message = "major is required")
+    private String major;
 
-    @ManyToOne
-    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    @ManyToMany(mappedBy = "students")
     @JsonIgnore
-    private Teacher teacher;
-
-    @ManyToMany
-    private List<Student> students;
+    private List<Course> courses;
 }

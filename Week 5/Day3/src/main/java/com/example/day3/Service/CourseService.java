@@ -2,6 +2,7 @@ package com.example.day3.Service;
 
 import com.example.day3.Exception.ApiException;
 import com.example.day3.Model.Course;
+import com.example.day3.Model.Student;
 import com.example.day3.Model.Teacher;
 import com.example.day3.Repository.CourseRepository;
 import com.example.day3.Repository.TeacherRepository;
@@ -61,6 +62,13 @@ public class CourseService {
 
         course.setTeacher(teacher);
         courseRepository.save(course);
+    }
+
+    public List<Student> getCourseStudents(Integer id){
+        Course course = courseRepository.findCourseById(id);
+        if (course == null)
+            throw new ApiException("ID not found");
+        return course.getStudents();
     }
 
 }

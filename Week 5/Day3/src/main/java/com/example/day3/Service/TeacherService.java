@@ -28,8 +28,11 @@ public class TeacherService {
         if(oldTeacher == null)
             throw new ApiException("ID not found");
 
-        teacher.setId(id);
-        teacherRepository.save(teacher);
+        oldTeacher.setName(teacher.getName());
+        oldTeacher.setAge(teacher.getAge());
+        oldTeacher.setEmail(teacher.getEmail());
+        oldTeacher.setSalary(teacher.getSalary());
+        teacherRepository.save(oldTeacher);
     }
 
     public void deleteTeacher(Integer id){

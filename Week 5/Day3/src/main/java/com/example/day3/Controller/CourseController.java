@@ -49,4 +49,9 @@ public class CourseController {
     public ResponseEntity getTeacherName(@PathVariable Integer id){
         return ResponseEntity.status(200).body("The teacher name is "+courseService.getCourseTeacherName(id));
     }
+
+    @GetMapping("/students/{id}")
+    public ResponseEntity getCourseStudents(@PathVariable Integer id){
+        return ResponseEntity.status(200).body(courseService.getCourseStudents(id));
+    }
 }
